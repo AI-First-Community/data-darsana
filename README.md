@@ -99,17 +99,25 @@ standing somewhere real.
 
 ## Seven ways of seeing
 
-One taxonomy, seven vantages. Change the view and no fact changes — only your position.
+Sarasvatī is *Vīṇā-vādinī* — she who plays the seven *svaras*, the notes
+**Sa Re Ga Ma Pa Dha Ni**. Seven notes are not seven songs. They are one music, heard from
+seven positions.
 
-| | View | What it answers |
-|---|---|---|
-| ◉ | **Graph** | how everything relates, clustered by domain and family |
-| ✧ | **Constellation** | how capabilities and archetypes actually connect |
-| ✳ | **Sunburst** | the hierarchy, opening outward from one centre |
-| ↗ | **Roadmap** | the four stages — what enters when, and why then |
-| ▦ | **Heatmap** | where effort concentrates across pillars and stages |
-| ◈ | **Radar** | *where do we stand?* — score yourself against the model |
-| ▤ | **Tables** | the atlases, the coverage matrix, and Architecture Eras |
+The map is built the same way. One taxonomy, seven vantages: change the view and no fact
+changes — only where you are standing.
+
+| | Svara | View | What it answers |
+|---|---|---|---|
+| ◉ | **Sa** · *the ground* | **Graph** | the home note — everything sounds in relation to the whole web |
+| ✧ | **Re** | **Constellation** | every capability and archetype as one boundary-free field of stars |
+| ✳ | **Ga** | **Sunburst** | the hierarchy blossoming outward from a single centre |
+| ↗ | **Ma** | **Roadmap** | the journey — each capability in the stage where it enters |
+| ▦ | **Pa** · *the dominant* | **Heatmap** | where intensity concentrates across pillars and stages |
+| ◈ | **Dha** | **Radar** | the honest look inward — where you stand against the model |
+| ▤ | **Ni** · *leads home* | **Tables** | the return to detail that resolves everything back to Sa |
+
+This is offered as homage, not scripture: no claim on the tradition, only the truth that a
+single reality is richer when you can hear it more than one way.
 
 ### Architecture Eras
 
@@ -153,11 +161,10 @@ That is the register throughout: what it is, and what it will cost you.
 **Darśana** (दर्शन) means *seeing* — and in Indian philosophy, an entire way of seeing; a
 school of thought, a stance from which the world becomes legible.
 
-The emblem is **Sarasvatī**, goddess of knowledge, music and flow — offered as homage, not
-doctrine. She is *Vīṇā-vādinī*, she who plays the seven *svaras*. Seven notes are not seven
-songs; they are one music heard from seven positions. That is the whole idea behind the
-seven views, and the [philosophy page](https://ai-first-community.github.io/data-darsana/philosophy.html)
-tells it properly.
+The emblem is **Sarasvatī**, goddess of knowledge, music and flow — chosen because what she
+presides over is exactly what a map like this is for: knowledge held in the open, and free
+to learn from. The [philosophy page](https://ai-first-community.github.io/data-darsana/philosophy.html)
+tells that properly — why a goddess, why seven notes, and where the metaphor stops.
 
 Data Darśana is a sibling to **Bodhi Map — Awakening to AI**.
 
