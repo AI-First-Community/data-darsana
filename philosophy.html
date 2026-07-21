@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F8FC">
+<meta name="description" content="The intent and philosophy behind Data Darśana — why a map of data for the AI era is offered in the spirit of Sarasvatī, goddess of knowledge.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%3E%3Cdefs%3E%3ClinearGradient%20id='g'%20x1='0'%20y1='0'%20x2='1'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%234285F4'/%3E%3Cstop%20offset='.5'%20stop-color='%2312B5CB'/%3E%3Cstop%20offset='1'%20stop-color='%2334A853'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='48'%20height='48'%20rx='12'%20fill='url(%23g)'/%3E%3Cg%20fill='%23ffffff'%3E%3Cpath%20d='M24%2026c0-7%204-13%204-13s4%206%204%2013-4%209-4%209-4-2-4-9Z'%20opacity='.96'/%3E%3Cpath%20d='M24%2026c0-7-4-13-4-13s-4%206-4%2013%204%209%204%209%204-2%204-9Z'%20opacity='.96'/%3E%3Cpath%20d='M24%2030c-3-5-9-8-9-8s0%207%204%2011%209%203%209%203-1-3-4-6Z'%20opacity='.82'/%3E%3Cpath%20d='M24%2030c3-5%209-8%209-8s0%207-4%2011-9%203-9%203%201-3%204-6Z'%20opacity='.82'/%3E%3C/g%3E%3C/svg%3E">
+<title>The Philosophy — Data Darśana</title>
+<style>
+  @font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url('fonts/manrope-400.woff2') format('woff2')}
+  @font-face{font-family:'Manrope';font-weight:500;font-display:swap;src:url('fonts/manrope-500.woff2') format('woff2')}
+  @font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url('fonts/manrope-600.woff2') format('woff2')}
+  @font-face{font-family:'Manrope';font-weight:700;font-display:swap;src:url('fonts/manrope-700.woff2') format('woff2')}
+  @font-face{font-family:'Manrope';font-weight:800;font-display:swap;src:url('fonts/manrope-800.woff2') format('woff2')}
+  /* latin-ext (variable) — supplies ś in Darśana and ī in Sarasvatī; declared last so it wins for these ranges */
+  @font-face{font-family:'Manrope';font-weight:200 800;font-display:swap;src:url('fonts/manrope-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  :root, :root[data-theme="light"]{
+    --blue:#1A73E8; --blue2:#4285F4; --teal:#12B5CB; --green:#34A853; --red:#EA4335; --yellow:#FBBC05;
+    --ink:#202124; --muted:#5F6368; --faint:#80868B; --gold:#B8860B; --line:#DADCE0;
+    --card:rgba(255,255,255,.66); --glass:rgba(255,255,255,.72); --enter-ink:#fff; --net-link:60,64,67;
+    --bg-grad:
+      radial-gradient(760px 680px at 22% 8%, rgba(66,133,244,.10), transparent 60%),
+      radial-gradient(620px 560px at 88% 22%, rgba(18,181,203,.08), transparent 58%),
+      radial-gradient(720px 640px at 60% 108%, rgba(52,168,83,.07), transparent 60%),
+      linear-gradient(180deg,#FDFEFF,#F1F5FB 78%);
+  }
+  :root[data-theme="dark"]{
+    --blue:#8AB4F8; --blue2:#7AA9F7; --teal:#4FD0E0; --green:#67E0A3; --red:#F28B82; --yellow:#FDD663;
+    --ink:#EAF0FB; --muted:#A6B6D4; --faint:#6E80A6; --gold:#E8C271; --line:#2A3A5C;
+    --card:rgba(255,255,255,.045); --glass:rgba(11,22,48,.66); --enter-ink:#08152E; --net-link:170,196,238;
+    --bg-grad:
+      radial-gradient(960px 760px at 20% 4%, rgba(138,180,248,.16), transparent 58%),
+      radial-gradient(720px 560px at 88% 14%, rgba(255,255,255,.07), transparent 55%),
+      radial-gradient(880px 820px at 66% 112%, rgba(79,208,224,.12), transparent 60%),
+      linear-gradient(160deg,#060E22 0%,#0A1A3A 48%,#123055 100%);
+  }
+  :root{ --sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+         --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);letter-spacing:-.01em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    background:var(--bg-grad);background-attachment:fixed;min-height:100vh;line-height:1.6;transition:color .3s}
+  #net{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+  a{color:var(--blue);text-underline-offset:3px}
+
+  /* ---- top bar ---- */
+  .topnav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:14px;
+    padding:13px clamp(16px,4vw,40px);background:var(--glass);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:800;letter-spacing:-.02em;
+    font-size:15px;color:var(--ink)}
+  .brand .m{width:26px;height:26px;flex:0 0 auto}
+  .brand em{font-style:normal;background:linear-gradient(120deg,var(--blue2),var(--teal) 50%,var(--green));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .navsp{margin-left:auto}
+  .navlink{display:none;text-decoration:none;color:var(--muted);font-weight:600;font-size:13.5px;padding:8px 12px;border-radius:9px}
+  .navlink:hover{color:var(--blue);background:color-mix(in srgb,var(--blue) 12%,transparent)}
+  .navico{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);
+    border-radius:10px;color:var(--muted);background:var(--card);cursor:pointer;text-decoration:none;
+    transition:color .2s,border-color .2s,transform .2s}
+  .navico:hover{color:var(--blue);border-color:var(--blue);transform:translateY(-1px)}
+  .navico svg{width:16px;height:16px} .tgl{font-size:15px;line-height:1}
+  @media(min-width:720px){.navlink{display:inline-flex}}
+
+  /* ---- reading column ---- */
+  .wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:clamp(30px,6vw,72px) clamp(20px,5vw,30px) 40px}
+  .fade{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+
+  .hero{text-align:center;padding-bottom:18px}
+  .hero .deity{height:150px;width:auto;margin:0 auto 22px;display:block;
+    filter:drop-shadow(0 14px 34px rgba(26,115,232,.20))}
+  .hero h1{font-size:clamp(38px,6.4vw,66px);font-weight:800;letter-spacing:-.03em;line-height:1.02;
+    background:linear-gradient(120deg,var(--blue2),var(--teal) 48%,var(--green));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero .sub{font-size:clamp(15px,2vw,18px);color:var(--muted);max-width:52ch;margin:18px auto 0;line-height:1.65}
+  .hero .sub b{color:var(--ink);font-weight:700}
+
+  .pull{font-family:var(--serif);font-size:clamp(21px,3.2vw,30px);line-height:1.4;color:var(--ink);
+    text-align:center;font-style:italic;max-width:20ch;margin:44px auto;text-wrap:balance}
+  .pull b{font-style:normal;font-weight:700;
+    background:linear-gradient(120deg,var(--blue),var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  section{margin-top:52px}
+  h2{font-size:clamp(23px,3.4vw,30px);font-weight:800;letter-spacing:-.025em;line-height:1.15;text-wrap:balance}
+  h2 .sm{display:block;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:9px}
+  section p{font-size:clamp(15.5px,1.7vw,17.5px);line-height:1.75;color:var(--ink);max-width:66ch;margin-top:16px}
+  section p.q{color:var(--muted)}
+  section p b{font-weight:700}
+  .sk{color:var(--gold);font-weight:700;font-style:italic}
+  .rule{height:1px;border:0;background:linear-gradient(90deg,var(--line),transparent);margin:6px 0 0}
+
+  /* ---- seven symbols ---- */
+  .symbols{display:grid;grid-template-columns:1fr;gap:12px;margin-top:26px}
+  @media(min-width:640px){.symbols{grid-template-columns:1fr 1fr}}
+  .sym{display:flex;gap:13px;padding:16px 17px;border:1px solid var(--line);border-radius:14px;background:var(--card);
+    backdrop-filter:blur(4px)}
+  .sym .ic{flex:0 0 auto;width:34px;height:34px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
+    color:#fff;font-size:17px;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+  .sym h3{font-size:15.5px;font-weight:800;letter-spacing:-.01em}
+  .sym h3 span{color:var(--muted);font-weight:600;font-style:italic}
+  .sym p{font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:4px;max-width:none}
+
+  /* ---- svara table ---- */
+  .svara{width:100%;margin-top:24px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);
+    backdrop-filter:blur(4px)}
+  .svrow{display:grid;grid-template-columns:64px 150px 1fr;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid var(--line)}
+  .svrow:first-child{border-top:0}
+  .svrow .note{font-weight:800;font-size:18px;
+    background:linear-gradient(120deg,var(--blue),var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .svrow .note small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;color:var(--faint);-webkit-text-fill-color:var(--faint)}
+  .svrow .view{font-weight:700;font-size:14.5px;color:var(--ink)}
+  .svrow .view .g{color:var(--teal);margin-right:5px}
+  .svrow .read{font-size:13.5px;color:var(--muted);line-height:1.5}
+  @media(max-width:560px){
+    .svrow{grid-template-columns:52px 1fr;grid-auto-rows:min-content}
+    .svrow .read{grid-column:1 / -1;padding-left:64px;margin-top:-4px}
+  }
+
+  /* ---- humility callout ---- */
+  .humility{margin-top:44px;padding:24px 26px;border:1px solid var(--line);border-left:4px solid var(--gold);
+    border-radius:14px;background:var(--card);backdrop-filter:blur(4px)}
+  .humility p{font-family:var(--serif);font-style:italic;font-size:clamp(16px,2vw,18.5px);line-height:1.6;color:var(--ink);max-width:none;margin:0}
+
+  /* ---- footer cta ---- */
+  .endcta{margin-top:56px;text-align:center;padding-top:34px;border-top:1px solid var(--line)}
+  .endcta .enter{display:inline-flex;align-items:center;gap:11px;text-decoration:none;padding:14px 28px;border-radius:999px;
+    font-weight:700;font-size:15.5px;color:var(--enter-ink);background:linear-gradient(180deg,var(--blue2),var(--blue));
+    box-shadow:0 10px 30px rgba(26,115,232,.32), inset 0 1px 0 rgba(255,255,255,.35);transition:transform .2s,box-shadow .2s}
+  .endcta .enter:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(26,115,232,.44)}
+  .endcta .enter .arrow{font-weight:800;transition:transform .2s}
+  .endcta .enter:hover .arrow{transform:translateX(4px)}
+  :root[data-theme="dark"] .endcta .enter{background:linear-gradient(180deg,#9CC0FF,#5B93F0)}
+  .endcta .back{display:block;margin-top:18px;font-size:13.5px;color:var(--muted);text-decoration:none}
+  .endcta .back:hover{color:var(--blue)}
+  footer.foot{position:relative;z-index:1;text-align:center;padding:30px 20px 40px;font-size:12px;color:var(--faint)}
+  footer.foot b{color:var(--gold)} footer.foot a{color:var(--muted);text-decoration:none} footer.foot a:hover{color:var(--blue)}
+
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+</style>
+</head>
+<body>
+<canvas id="net"></canvas>
+
+<header class="topnav">
+  <a class="brand" href="index.html" aria-label="Data Darśana home">
+    <svg class="m" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M24 26c0-7 4-13 4-13s4 6 4 13-4 9-4 9-4-2-4-9Z" fill="#1A73E8" opacity=".9"/>
+      <path d="M24 26c0-7-4-13-4-13s-4 6-4 13 4 9 4 9 4-2 4-9Z" fill="#4285F4" opacity=".9"/>
+      <path d="M24 30c-3-5-9-8-9-8s0 7 4 11 9 3 9 3-1-3-4-6Z" fill="#12B5CB" opacity=".85"/>
+      <path d="M24 30c3-5 9-8 9-8s0 7-4 11-9 3-9 3 1-3 4-6Z" fill="#34A853" opacity=".85"/>
+      <circle cx="24" cy="27" r="3.4" fill="#fff" stroke="#1A73E8" stroke-width="1.4"/>
+    </svg>
+    Data&nbsp;Darśana
+  </a>
+  <span class="navsp"></span>
+  <a class="navlink" href="index.html">Home</a>
+  <a class="navlink" href="app.html">The map</a>
+  <a class="navico" href="https://www.linkedin.com/in/sanjeevazad/" target="_blank" rel="noopener" title="Sanjeev Azad on LinkedIn" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+  </a>
+  <a class="navico" href="https://github.com/AI-First-Community/data-darsana" target="_blank" rel="noopener" title="GitHub repository" aria-label="GitHub repository">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.26.82-.57 0-.28-.01-1.02-.02-2-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.82 5.62-5.5 5.92.43.37.82 1.1.82 2.22 0 1.61-.02 2.9-.02 3.29 0 .32.22.69.83.57A12.3 12.3 0 0 0 24 12.29C24 5.78 18.63.5 12 .5z"/></svg>
+  </a>
+  <button class="navico tgl" id="themeToggle" type="button" title="Toggle light / dark" aria-label="Toggle theme">☾</button>
+</header>
+
+<main class="wrap">
+
+  <section class="hero fade">
+    <img class="deity" src="images/saraswati-tint.png" alt="Sarasvatī playing the vīṇā"
+         onerror="this.style.visibility='hidden'">
+    <div class="eyebrow">The intent · Philosophy</div>
+    <h1>Why Sarasvatī</h1>
+    <p class="sub">Data Darśana is a map of the data an enterprise needs to thrive with AI. But the name, the emblem, and even the number of its views were chosen with care — <b>in the spirit of Sarasvatī</b>, deity of knowledge, speech, music and flow.</p>
+  </section>
+
+  <p class="pull fade">Knowledge is the one wealth that <b>grows the more it is shared.</b></p>
+
+  <section class="fade">
+    <h2><span class="sm">The stance</span>A goddess of understanding, not of power</h2>
+    <p>Sarasvatī is worshipped not for wealth or dominion, but for <span class="sk">vidyā</span> — knowledge, learning, and clear speech. Hers is the one form of abundance you cannot hoard: give it away and it multiplies; hold it back and it withers. Old wisdom put it plainly — <i>knowledge is the wealth no thief can take, and it increases in the giving.</i></p>
+    <p>That is exactly the stance this project takes toward data in the AI era. The model is <b>vendor-neutral, open, and free to learn from</b> — a shared way of seeing, not a product to be gated. In an age when data is often locked away as advantage, choosing to make understanding open is itself a small act of reverence for what Sarasvatī represents.</p>
+  </section>
+
+  <section class="fade">
+    <h2><span class="sm">The symbols</span>Her form reads like an ethic for building with AI</h2>
+    <p class="q">Every element the goddess carries turns out to be quiet guidance for how intelligence — human or artificial — should be held.</p>
+    <div class="symbols">
+      <div class="sym"><span class="ic" style="background:linear-gradient(150deg,#4285F4,#1A73E8)">♪</span><div><h3>Vīṇā <span>· music</span></h3><p>She holds an instrument, not a weapon. Knowledge tuned toward harmony, never toward force.</p></div></div>
+      <div class="sym"><span class="ic" style="background:linear-gradient(150deg,#12B5CB,#1A73E8)">▤</span><div><h3>Pustaka <span>· the book</span></h3><p>Always open. Learning is never finished — the palm-leaf is never closed and put away.</p></div></div>
+      <div class="sym"><span class="ic" style="background:linear-gradient(150deg,#B8860B,#E0A82E)">◍</span><div><h3>Akṣamālā <span>· the rosary</span></h3><p>Wisdom needs practice and rhythm, not just information. Understanding is a discipline, bead by bead.</p></div></div>
+      <div class="sym"><span class="ic" style="background:linear-gradient(150deg,#34A853,#12B5CB)">✿</span><div><h3>Śveta-padma <span>· white lotus</span></h3><p>Clarity that rises unstained out of muddy water — insight drawn cleanly from messy, tangled data.</p></div></div>
+      <div class="sym"><span class="ic" style="background:linear-gradient(150deg,#EA4335,#B8860B)">⩊</span><div><h3>Haṃsa <span>· the swan</span></h3><p><span class="sk">Viveka</span> — the fabled power to separate milk from water. Discernment is the very skill AI most needs from us.</p></div></div>
+      <div class="sym"><span class="ic" style="background:linear-gradient(150deg,#4285F4,#12B5CB)">〜</span><div><h3>The river <span>· sarasvatī</span></h3><p>She began as a river. Knowledge is meant to flow and nourish what it passes — not to pool and stagnate.</p></div></div>
+      <div class="sym" style="grid-column:1 / -1"><span class="ic" style="background:linear-gradient(150deg,#9AA0A6,#5F6368)">◇</span><div><h3>White raiment <span>· sattva</span></h3><p>Calm, clarity, balance — the quality of <span class="sk">sattva</span>. It is why this model takes no side and favours no vendor: it tries only to see clearly.</p></div></div>
+    </div>
+  </section>
+
+  <section class="fade">
+    <h2><span class="sm">Seven notes, one song</span>And so — seven views</h2>
+    <p>Sarasvatī is <span class="sk">Vīṇā-vādinī</span>, she who plays the seven <span class="sk">svaras</span> — <b>Sa Re Ga Ma Pa Dha Ni</b>. Seven notes are not seven songs; they are one music heard from seven positions. This is the honest thread to the goddess: not a claim of scripture, but the truth that a single reality is richer when you can hear it more than one way.</p>
+    <p>Data Darśana offers seven views of one underlying taxonomy — the same 248 capabilities and 128 archetypes, played in seven keys. Change the view and no fact changes; only your vantage does.</p>
+    <p>There is an eighth reading, and it is a reading of <i>time</i> rather than of structure: the same archetypes sorted by the work they serve and the generation they belong to — proven, mainstream, frontier. It sits inside the tables rather than beside the seven, because it changes no fact either. It only admits that a discipline has a past, and that the past is often still the right answer.</p>
+    <div class="svara" role="table" aria-label="Seven views as seven notes">
+      <div class="svrow"><div class="note">Sa<small>THE GROUND</small></div><div class="view"><span class="g">◉</span>Graph</div><div class="read">the home note — everything sounds in relation to the whole web.</div></div>
+      <div class="svrow"><div class="note">Re</div><div class="view"><span class="g">✧</span>Constellation</div><div class="read">every capability and archetype as one boundary-free field of stars.</div></div>
+      <div class="svrow"><div class="note">Ga</div><div class="view"><span class="g">✳</span>Sunburst</div><div class="read">the hierarchy blossoming outward from a single centre.</div></div>
+      <div class="svrow"><div class="note">Ma</div><div class="view"><span class="g">↗</span>Roadmap</div><div class="read">the journey — each capability in the stage where it enters.</div></div>
+      <div class="svrow"><div class="note">Pa<small>THE DOMINANT</small></div><div class="view"><span class="g">▦</span>Heatmap</div><div class="read">where intensity concentrates across pillars and stages.</div></div>
+      <div class="svrow"><div class="note">Dha</div><div class="view"><span class="g">◈</span>Radar</div><div class="read">the honest look inward — where you stand against the model.</div></div>
+      <div class="svrow"><div class="note">Ni<small>LEADS HOME</small></div><div class="view"><span class="g">▤</span>Tables</div><div class="read">the return to detail that resolves everything back to Sa.</div></div>
+    </div>
+  </section>
+
+  <section class="fade">
+    <h2><span class="sm">The intent</span>Bringing AI closer to how we mean to live</h2>
+    <p>We build so much technology in the language of extraction — capture, lock-in, advantage. Sarasvatī offers a different vocabulary: <b>learn, share, grow together.</b> To place a data model under her name is to hold ourselves to that softer, older standard — to treat intelligence as something we cultivate in the open and pass on, rather than something we merely accumulate.</p>
+    <p>If AI is to be woven into how we work and decide, then the values we bring to it matter as much as the models. Curiosity over certainty. Discernment over speed. Generosity over gatekeeping. That is the whole intent behind this map — a small attempt to keep something spiritual close as we build, so that what we make helps us understand more, and one another better.</p>
+  </section>
+
+  <div class="humility fade">
+    <p>Offered with humility, as a homage — not as a claim of scripture. We reach toward the sacred only to borrow its ethic: that intelligence, human or artificial, is worthiest when it helps us learn, share, and grow together.</p>
+  </div>
+
+  <div class="endcta fade">
+    <a class="enter" href="app.html">Enter the map <span class="arrow">→</span></a>
+    <a class="back" href="index.html">← Back to the landing</a>
+  </div>
+
+</main>
+
+<footer class="foot">Data&nbsp;Darśana · in the spirit of Sarasvatī · <a href="https://www.linkedin.com/in/sanjeevazad/" target="_blank" rel="noopener"><b>Innovate with Sanjeev</b></a></footer>
+
+<script>
+  // ---- light / dark theme (shared with the landing + app via localStorage) ----
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('themeToggle');
+    var EMB={ light:'images/saraswati-tint.png', dark:'images/saraswati-light.png' };
+    window.NET={ link:'60,64,67' };
+    function apply(t){
+      root.setAttribute('data-theme', t);
+      window.NET.link = t==='dark' ? '170,196,238' : '60,64,67';
+      var img=document.querySelector('.deity'); if(img) img.src = EMB[t] || EMB.light;
+      if(btn) btn.textContent = t==='dark' ? '☀' : '☾';
+      var meta=document.querySelector('meta[name=theme-color]'); if(meta) meta.setAttribute('content', t==='dark' ? '#0B1A38' : '#F6F8FC');
+      try{ localStorage.setItem('darsana-theme', t); }catch(e){}
+    }
+    var saved='light'; try{ saved=localStorage.getItem('darsana-theme')||'light'; }catch(e){}
+    apply(saved);
+    if(btn) btn.onclick=function(){ apply(root.getAttribute('data-theme')==='dark'?'light':'dark'); };
+  })();
+
+  // ---- soft knowledge-network background (same as the landing) ----
+  (function(){
+    const c=document.getElementById('net'),x=c.getContext('2d');
+    const DPR=Math.min(window.devicePixelRatio||1,2);let W,H,pts;
+    const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const COL=['26,115,232','18,181,203','52,168,83','251,188,5'];
+    function rnd(a,b){return a+Math.random()*(b-a);}
+    function size(){W=c.width=innerWidth*DPR;H=c.height=innerHeight*DPR;}
+    function make(){return{x:rnd(0,W),y:rnd(0,H),vx:rnd(-.05,.05)*DPR,vy:rnd(-.05,.05)*DPR,r:rnd(1.2,2.5)*DPR,c:COL[(Math.random()*COL.length)|0]};}
+    function init(){size();const n=Math.max(24,Math.min(54,Math.floor(innerWidth/30)));pts=[];for(let i=0;i<n;i++)pts.push(make());}
+    const LINK=(150*DPR)**2;
+    function frame(){
+      x.clearRect(0,0,W,H);
+      for(let i=0;i<pts.length;i++){const p=pts[i];p.x+=p.vx;p.y+=p.vy;
+        if(p.x<0)p.x+=W;if(p.x>W)p.x-=W;if(p.y<0)p.y+=H;if(p.y>H)p.y-=H;}
+      for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j];const dx=a.x-b.x,dy=a.y-b.y,d2=dx*dx+dy*dy;
+        if(d2<LINK){x.strokeStyle='rgba('+(window.NET&&window.NET.link||'60,64,67')+','+(0.06*(1-d2/LINK)).toFixed(3)+')';x.lineWidth=DPR;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
+      for(let i=0;i<pts.length;i++){const p=pts[i];x.fillStyle='rgba('+p.c+',0.42)';x.beginPath();x.arc(p.x,p.y,p.r,0,6.2832);x.fill();}
+      if(!reduce)requestAnimationFrame(frame);
+    }
+    init();frame();
+    window.addEventListener('resize',init);
+  })();
+</script>
+</body>
+</html>
