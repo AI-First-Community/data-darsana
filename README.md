@@ -91,9 +91,11 @@ quietly costs you. Sixteen archetypes have no diagram at all, deliberately — a
 that merely restates its definition is padding, and padding is the tell of a deck with
 nothing to say.
 
-**Machines are readers too.** The same taxonomy is published as structured knowledge, not
-just pixels — because the systems being designed here will increasingly need to read the
-map as well as the people designing them.
+**A map is only useful if you can find yourself on it.** This one is built to be located
+in, not admired. Every archetype is something an estate somewhere actually runs, named the
+way practitioners name it, so the first useful move is recognition: *that row is us.*
+Everything after that — the gaps, the next stage, the honest cost — follows from
+standing somewhere real.
 
 ## Seven ways of seeing
 
